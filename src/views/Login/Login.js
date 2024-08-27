@@ -3,6 +3,7 @@ import "./Login.css"
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import toast, {Toaster} from 'react-hot-toast'
+import Navbar from "./../../Components/Navbar/Navbar.js";
 
 function Login() {
   const [email, setEmail] = useState('')
@@ -30,20 +31,21 @@ function Login() {
     }
   }
 
-  return (
-
+  return (<>
+   <Navbar />
     <div>
-      <h2 className='heading'>User Login</h2>
+      
          
-    <div className="login-form">
+    <div className="auth-form">
       
     
 
-      <form >
+      <form  >
+      <h2 className='heading1'>User Login</h2>
         <input
           type='email'
           placeholder='Email'
-           className='input'
+           className='user-input'
            value={email}
           onChange={(e) => setEmail(e.target.value)}
           />
@@ -51,14 +53,14 @@ function Login() {
         <input
           type='password'
           placeholder='Password'
-          className='input'
+          className='user-input'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           />
 
         <button
           type='button'
-          className='form-btn'
+          className='btn-auth'
           onClick={loginNow}
           >
           Login
@@ -70,6 +72,7 @@ function Login() {
       <Toaster />
     </div>
     </div>
+    </>
   )
 }
 

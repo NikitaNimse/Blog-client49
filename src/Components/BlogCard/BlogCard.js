@@ -68,7 +68,9 @@ function BlogCard({ _id, title,content,name,image,date,Language, createdAt, load
           </span> 
     
           <span className="info1">
+            {name}
             {new Date(createdAt).toLocaleString()}
+           
           </span>
     
           <h5 className="info1">
@@ -79,25 +81,22 @@ function BlogCard({ _id, title,content,name,image,date,Language, createdAt, load
 
         <div className="author-card">
     
-          <span className="name">
-            {name}
-          </span>
+       
        
           <span className="date" >
-         
            {date} 
           </span>
           </div>
          
-          <span className="category-badge">
+          <div className="category-badge">
           
-           {Language}
-          </span>
+           Language: {Language}
+          </div>
           
          <Link to={`/update/${_id}`}>
          <button 
          type="button" 
-         className="action-button"
+        className="transaction-card-delete"
          > Update</button>
           </Link>
     

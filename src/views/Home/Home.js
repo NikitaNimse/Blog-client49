@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import  BlogCard from '../../Components/BlogCard/BlogCard.js'
 import ImgAdd from "./add.png"
+import Navbar from "./../../Components/Navbar/Navbar.js";
 
 function Home() {
   const [user, setUser] = useState('')
@@ -41,7 +42,8 @@ const loadBlogs = async () => {
   }, [user])
 
 
- return (
+ return (<>
+   <Navbar />
     <div>
       <h1 className="home-greeting">Hello, {user.fullname}</h1>
       
@@ -58,7 +60,7 @@ const loadBlogs = async () => {
         Logout
       </span>
 
-
+      
 
 
 <div className='transactions-container'>
@@ -87,6 +89,7 @@ const loadBlogs = async () => {
       </div>
       <Toaster/>
     </div>
+    </>
   )
 }
 

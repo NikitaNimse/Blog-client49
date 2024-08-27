@@ -20,7 +20,7 @@ function UpdateBlog() {
 
   const updateblog = async() => {
     const response =await axios.put(`${process.env.React_APP_API_URL}/blog/${id}`,{
-      user: user,
+      user: user._id,
       title: title,
       content: content,
       name: name,
